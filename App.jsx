@@ -1,5 +1,22 @@
 import { useEffect, useMemo, useState } from 'react'
 import './index.css'
+import metaImg from './Meta.png'
+import spotifyImg from './Spotify.png'
+import codingGif from './Coding.gif'
+import animationGif from './Animation1.gif'
+import photoImg from './Photo.jpeg'
+import htmlIcon from './html.png'
+import cssIcon from './css.png'
+import javascriptIcon from './javascript.png'
+import reactjsIcon from './reactjs.png'
+import tailwindIcon from './tailwind.png'
+import nodejsIcon from './nodejs.png'
+import viteIcon from './vite.png'
+import firebaseIcon from './firebase.png'
+import muiIcon from './MUI.png'
+import bootstrapIcon from './bootstrap.png'
+import vercelIcon from './vercel.png'
+import sweetalertIcon from './SweetAlert.png'
 
 const words = ['Creative Developer', 'Tech Enthusiast', 'Digital Builder']
 const navItems = [
@@ -9,15 +26,15 @@ const navItems = [
   ['Contact', '#contact'],
 ]
 const projects = [
-  { title: 'Pikabot', description: 'Ruang eksperimen untuk web, automasi, dan ide digital yang dibuat lebih sederhana.', image: '/zip-assets/Meta.png', tags: ['React', 'Web', 'System'] },
-  { title: 'Interface Study', description: 'Eksplorasi visual tentang ritme, tipografi, dan interaksi yang terasa hidup.', image: '/zip-assets/Spotify.png', tags: ['UI', 'Motion', 'Design'] },
-  { title: 'Small Things', description: 'Catatan kecil, proses belajar, dan eksperimen yang tumbuh menjadi karya.', image: '/zip-assets/Coding.gif', tags: ['Build', 'Learn', 'Explore'] },
+  { title: 'Pikabot', description: 'Ruang eksperimen untuk web, automasi, dan ide digital yang dibuat lebih sederhana.', image: metaImg, tags: ['React', 'Web', 'System'] },
+  { title: 'Interface Study', description: 'Eksplorasi visual tentang ritme, tipografi, dan interaksi yang terasa hidup.', image: spotifyImg, tags: ['UI', 'Motion', 'Design'] },
+  { title: 'Small Things', description: 'Catatan kecil, proses belajar, dan eksperimen yang tumbuh menjadi karya.', image: codingGif, tags: ['Build', 'Learn', 'Explore'] },
 ]
 const stack = [
-  ['HTML', 'html'], ['CSS', 'css'], ['JavaScript', 'javascript'], ['ReactJS', 'reactjs'],
-  ['Tailwind', 'tailwind'], ['Node.js', 'nodejs'], ['Vite', 'vite'], ['Firebase', 'firebase'],
-  ['Material UI', 'MUI'], ['Bootstrap', 'bootstrap'], ['Vercel', 'vercel'], ['SweetAlert2', 'SweetAlert'],
-].map(([name, icon]) => ({ name, icon: `/zip-assets/icons/${icon}.png` }))
+  { name: 'HTML', icon: htmlIcon }, { name: 'CSS', icon: cssIcon }, { name: 'JavaScript', icon: javascriptIcon }, { name: 'ReactJS', icon: reactjsIcon },
+  { name: 'Tailwind', icon: tailwindIcon }, { name: 'Node.js', icon: nodejsIcon }, { name: 'Vite', icon: viteIcon }, { name: 'Firebase', icon: firebaseIcon },
+  { name: 'Material UI', icon: muiIcon }, { name: 'Bootstrap', icon: bootstrapIcon }, { name: 'Vercel', icon: vercelIcon }, { name: 'SweetAlert2', icon: sweetalertIcon },
+]
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -74,7 +91,7 @@ function App() {
     <>
       <div className={`zip-loader ${loading ? 'is-active' : 'is-done'}`} aria-hidden={!loading}>
         <div className="zip-loader__glow" />
-        <img src="/zip-assets/Coding.gif" alt="" />
+        <img src={codingGif} alt="" />
         <strong>Ndraa<span>.</span></strong>
         <div className="zip-loader__bar"><i style={{ width: `${loadingProgress}%` }} /></div>
         <small>initializing experience / {loadingProgress}%</small>
@@ -104,8 +121,8 @@ function App() {
           </div>
           <div className="zip-hero__visual" data-reveal>
             <div className="zip-visual-glow" />
-            <div className="zip-gif-card"><img src="/zip-assets/Coding.gif" alt="Animasi coding dari project referensi" /></div>
-            <div className="zip-gif-card zip-gif-card--small"><img src="/zip-assets/Animation1.gif" alt="Animasi visual dari project referensi" /></div>
+            <div className="zip-gif-card"><img src={codingGif} alt="Animasi coding dari project referensi" /></div>
+            <div className="zip-gif-card zip-gif-card--small"><img src={animationGif} alt="Animasi visual dari project referensi" /></div>
             <div className="zip-code-lines"><span>const</span> idea = <b>build</b>(<i>"better"</i>)</div>
           </div>
         </section>
@@ -113,7 +130,7 @@ function App() {
         <section id="about" className="zip-section zip-wrap" data-reveal>
           <div className="zip-section-heading"><span>01 / About</span><p>Transforming ideas into digital experiences</p></div>
           <div className="zip-about-grid">
-            <div className="zip-profile"><img src="/zip-assets/Photo.jpeg" alt="Foto Ndraa di pantai" /><div className="zip-profile__ring" /></div>
+            <div className="zip-profile"><img src={photoImg} alt="Foto Ndraa di pantai" /><div className="zip-profile__ring" /></div>
             <div className="zip-about-copy"><p className="zip-eyebrow">Hello, I&apos;m</p><h2>Ndraa</h2><p>Saya suka membangun sesuatu dari ide yang masih abstrak sampai menjadi pengalaman digital yang bisa digunakan dan dirasakan. Pikabot.my.id menjadi ruang untuk karya, proses, dan eksperimen saya.</p><div className="zip-quote">&quot;Keep learning, keep building, keep it human.&quot;</div><a className="zip-text-link" href="#portfolio">Explore my work <span className="zip-icon zip-icon--right" aria-hidden="true" /></a></div>
           </div>
           <div className="zip-stats"><div><b>03</b><span>Selected works</span></div><div><b>∞</b><span>Curiosity level</span></div><div><b>01</b><span>Digital playground</span></div></div>
